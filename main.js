@@ -1,9 +1,9 @@
-const Koa = require("koa");
-const app = new Koa();
+var express = require("express");
+const app = express();
 
-app.use(async (ctx) => {
-  ctx.body = "Hello World from railway";
+app.get("/", async (req, res) => {
+  res.send("Hello World from railway");
 });
 
-const PORT = 1000;
+const PORT = 2000;
 app.listen(process.env.PORT || PORT, () => console.log("run server " + PORT));
